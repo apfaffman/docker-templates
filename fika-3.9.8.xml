@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>fika-3.9.8</Name>
+  <Repository>apfaffman/fika-3.9.8</Repository>
+  <Registry>https://registry.hub.docker.com/r/apfaffman/fika-3.9.8</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/apfaffman/fika-3.9.8</Project>
+  <Overview>Docker image to run the backend server component of SPT (presently v3.9.8) and the Fika multiplayer mod(v2.2.8).&#xD;
+&#xD;
+This server instance runs the SPT server backend, the Fika server mod, and is the location of all player profiles and server mods. This image *does not* contain the dedicated client. &#xD;
+&#xD;
+The image will take a few minutes on first run to generate necesary server files and import the database. You can watch the logs to see when it's ready to accept connections.&#xD;
+&#xD;
+To connect, point your SPT Client to the host's address (or this container's address if you have it bridged) with the port specified (e.g, http://:6969).</Overview>
+  <Category>GameServers:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/apfaffman/fika-3.9.8/refs/heads/main/pika.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1730156289</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>N/A</Requires>
+  <Config Name="Server Files" Target="/opt/server" Default="/mnt/user/appdata/fika-3.9.8" Mode="rw" Description="Location of required server files, user profiles, server (user/mod) mods, etc." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/fika-3.9.8</Config>
+  <Config Name="Listening Port" Target="6969" Default="6969" Mode="tcp" Description="SPT Server Listening Port" Type="Port" Display="always" Required="true" Mask="false">7969</Config>
+</Container>

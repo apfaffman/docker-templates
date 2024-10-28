@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Maintainer>
+  <Icon>https://raw.githubusercontent.com/apfaffman/docker-templates/master/apfaffman/images/peanut.png</Icon>
+  <Profile>
+    Just trying to spread the Unraid love.
+  </Profile>
+  <DonateLink>https://www.paypal.com/paypalme/pfaffo</DonateLink>
+  <DonateText>If you like my work please consider donating.</DonateText>
+</Maintainer>

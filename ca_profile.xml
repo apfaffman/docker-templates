@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Maintainer>
-  <Icon>https://raw.githubusercontent.com/docker-templates/blob/main/peanut.png</Icon>
+  <Icon>https://raw.githubusercontent.com/apfaffman/docker-templates/refs/heads/main/peanut.png</Icon>
   <Profile>
     Just trying to spread the Unraid love.
   </Profile>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>fika-spt</Name>
+  <Name>spt-fika</Name>
   <Repository>apfaffman/fika-3.9.8:latest</Repository>
   <Registry>https://registry.hub.docker.com/r/apfaffman/fika-3.9.8</Registry>
   <Network>bridge</Network>
@@ -9,7 +9,7 @@
   <Privileged>false</Privileged>
   <Support/>
   <Project>https://github.com/apfaffman/fika-3.9.8</Project>
-  <Overview>SPT AKI server backend with optional Fika mod (can be disabled). Based off the generous work of zedramus and fellow contributors: https://github.com/zhliau/fika-spt-server-docker.&#xD;
+  <Overview>SPT AKI server backend with optional Fika mod (can be disabled on first run). Based off the generous work of zedramus and fellow contributors: https://github.com/zhliau/fika-spt-server-docker.&#xD;
 &#xD;
 Current SPT version: 3.10.5
 &#xD;
@@ -29,7 +29,7 @@ This is a barebones template to get your SPT/Fika server running quickly on Unra
   <DonateText>If you like my work please consider donating.</DonateText>
   <DonateLink>https://www.paypal.com/paypalme/pfaffo</DonateLink>
   <Requires/>
-  <Config Name="Server Files" Target="/opt/server" Default="/mnt/cache/appdata/fika-3.9.8" Mode="rw" Description="Location of required server files, user profiles, server (user/mod) mods, etc." Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/fika/backend</Config>
+  <Config Name="Server Files" Target="/opt/server" Default="/mnt/user/appdata/spt-fika" Mode="rw" Description="Location of required server files, user profiles, server (user/mod) mods, etc." Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/fika/backend</Config>
   <Config Name="Listening Port" Target="6969" Default="6969" Mode="tcp" Description="SPT Server Listening Port" Type="Port" Display="always" Required="true" Mask="false">6969</Config>
   <Config Name="Install Fika Mod" Target="INSTALL_FIKA" Default="true" Mode="" Description="true/false" Type="Variable" Display="always" Required="true" Mask="false">true</Config>
   <Config Name="Listen on All Interfaces" Target="LISTEN_ALL_NETWORKS" Default="false" Mode="" Description="Set SPT server to listen on all network interfaces" Type="Variable" Display="always" Required="false" Mask="false">true</Config>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>fika-3.9.8</Name>
+  <Name>fika-spt</Name>
   <Repository>apfaffman/fika-3.9.8:latest</Repository>
   <Registry>https://registry.hub.docker.com/r/apfaffman/fika-3.9.8</Registry>
   <Network>bridge</Network>

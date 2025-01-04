@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>spt-fika</Name>
-  <Repository>apfaffman/fika-3.9.8:latest</Repository>
-  <Registry>https://registry.hub.docker.com/r/apfaffman/fika-3.9.8</Registry>
+  <Repository>apfaffman/spt-fika:latest</Repository>
+  <Registry>https://registry.hub.docker.com/r/apfaffman/spt-fika</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>

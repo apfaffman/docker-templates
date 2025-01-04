@@ -15,8 +15,6 @@ Current SPT version: 3.10.5
 &#xD;
 Current Fika server version: v2.3.6
 &#xD;
-Check out the project page; there are more server options available, including enabling Modsync and automated mod installs.&#xD;
-&#xD;
 This is a barebones template to get your SPT/Fika server running quickly on Unraid.</Overview>
   <Category>GameServers:</Category>
   <WebUI/>
@@ -30,7 +28,8 @@ This is a barebones template to get your SPT/Fika server running quickly on Unra
   <DonateLink>https://www.paypal.com/paypalme/pfaffo</DonateLink>
   <Requires/>
   <Config Name="Server Files" Target="/opt/server" Default="/mnt/user/appdata/spt-fika" Mode="rw" Description="Location of required server files, user profiles, server (user/mod) mods, etc." Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/fika/backend</Config>
-  <Config Name="Listening Port" Target="6969" Default="6969" Mode="tcp" Description="SPT Server Listening Port" Type="Port" Display="always" Required="true" Mask="false">6969</Config>
-  <Config Name="Install Fika Mod" Target="INSTALL_FIKA" Default="true" Mode="" Description="true/false" Type="Variable" Display="always" Required="true" Mask="false">true</Config>
-  <Config Name="Listen on All Interfaces" Target="LISTEN_ALL_NETWORKS" Default="false" Mode="" Description="Set SPT server to listen on all network interfaces" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="Listening Port" Target="6969" Default="6969" Mode="tcp" Description="Leave this alone unless you know what you're doing." Type="Port" Display="always" Required="true" Mask="false">6969</Config>
+  <Config Name="Install Fika Mod" Target="INSTALL_FIKA" Default="true" Mode="" Description="Installs Fika to user/mods folder." Type="Variable" Display="always" Required="true" Mask="false">true</Config>
+  <Config Name="Listen on All Interfaces" Target="LISTEN_ALL_NETWORKS" Default="false" Mode="" Description="Sets http.json 'backendIp' value to 0.0.0.0, telling SPT to listen on all interfaces." Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="Enable Profile Backup" Target="ENABLE_PROFILE_BACKUP" Default="true" Mode="" Description="Creates a cron job that handles profile backups." Type="Variable" Display="always" Required="false" Mask="false">true</Config>
 </Container>

@@ -8,7 +8,7 @@
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support/>
-  <Project>https://github.com/apfaffman/fika-3.9.8</Project>
+  <Project>https://github.com/apfaffman/spt-fika</Project>
   <Overview>SPT AKI server backend with optional Fika mod (can be disabled on first run). Based off the generous work of zedramus and fellow contributors: https://github.com/zhliau/fika-spt-server-docker.&#xD;
 &#xD;
 Current SPT version: 3.10.5
@@ -18,8 +18,8 @@ Current Fika server version: v2.3.6
 This is a barebones template to get your SPT/Fika server running quickly on Unraid.</Overview>
   <Category>GameServers:</Category>
   <WebUI/>
-  <TemplateURL>https://raw.githubusercontent.com/apfaffman/docker-templates/master/fika-3.9.8.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/apfaffman/fika-3.9.8/refs/heads/main/pika.png</Icon>
+  <TemplateURL>https://raw.githubusercontent.com/apfaffman/docker-templates/master/spt-fika.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/apfaffman/spt-fika/refs/heads/main/pika.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>

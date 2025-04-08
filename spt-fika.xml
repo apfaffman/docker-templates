@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>spt-fika</Name>
-  <Repository>apfaffman/spt-fika:latest</Repository>
-  <Registry>https://registry.hub.docker.com/r/apfaffman/spt-fika</Registry>
+  <Repository>ghcr.io/zhliau/fika-spt-server-docker:3.11.2</Repository>
+  <Registry>https://github.com/zhliau?tab=repositories</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support/>
   <Project>https://github.com/apfaffman/spt-fika</Project>
-  <Overview>SPT AKI server backend with optional Fika mod (can be disabled on first run). Based off the generous work of zedramus and fellow contributors: https://github.com/zhliau/fika-spt-server-docker.&#xD;
+  <Overview>SPT AKI server backend with optional Fika mod (can be disabled on first run). Uses zedramus's docker image: https://github.com/zhliau/fika-spt-server-docker.&#xD;
 &#xD;
-Current SPT version: 3.10.5
+Current SPT version: 3.11.2
 &#xD;
-Current Fika server version: v2.3.6
+Current Fika server version: v2.4.4
 &#xD;
 This is a barebones template to get your SPT/Fika server running quickly on Unraid.</Overview>
   <Category>GameServers:</Category>
@@ -24,15 +24,15 @@ This is a barebones template to get your SPT/Fika server running quickly on Unra
   <PostArgs/>
   <CPUset/>
   <DateInstalled>1735843381</DateInstalled>
-  <DonateText>If you like my work please consider donating.</DonateText>
-  <DonateLink>https://www.paypal.com/paypalme/pfaffo</DonateLink>
+  <DonateText>Please consider donating to the Ukrainian defense effort.</DonateText>
+  <DonateLink>https://www.reddit.com/r/ukraine/wiki/charities/</DonateLink>
   <Requires/>
   <Config Name="Server Files" Target="/opt/server" Default="/mnt/cache/appdata/spt-fika" Mode="rw" Description="Location of required server files, user profiles, server (user/mod) mods, etc." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/spt-fika</Config>
   <Config Name="Listening Port" Target="6969" Default="6969" Mode="tcp" Description="Leave this alone unless you know what you're doing." Type="Port" Display="always" Required="true" Mask="false">6969</Config>
   <Config Name="Install Fika Mod" Target="INSTALL_FIKA" Default="true" Mode="" Description="Installs Fika to user/mods folder." Type="Variable" Display="always" Required="true" Mask="false">true</Config>
   <Config Name="Listen on All Interfaces" Target="LISTEN_ALL_NETWORKS" Default="false" Mode="" Description="Sets http.json 'backendIp' value to 0.0.0.0, telling SPT to listen on all interfaces." Type="Variable" Display="always" Required="false" Mask="false">false</Config>
   <Config Name="Enable Profile Backup" Target="ENABLE_PROFILE_BACKUP" Default="true" Mode="" Description="Creates a cron job that handles profile backups." Type="Variable" Display="always" Required="false" Mask="false">true</Config>
-  <Config Name="Fika Version" Target="FIKA_VERSION" Default="v2.3.6" Mode="" Description="Override the Fika version string to grab the server release from. The release URL is formatted as https://github.com/project-fika/Fika-Server/releases/download/$FIKA_VERSION/fika-server.zip" Type="Variable" Display="advanced" Required="false" Mask="false">v2.3.6</Config>
+  <Config Name="Fika Version" Target="FIKA_VERSION" Default="v2.4.4" Mode="" Description="Override the Fika version string to grab the server release from. The release URL is formatted as https://github.com/project-fika/Fika-Server/releases/download/$FIKA_VERSION/fika-server.zip" Type="Variable" Display="advanced" Required="false" Mask="false">v2.3.6</Config>
   <Config Name="Auto Update SPT" Target="AUTO_UPDATE_SPT&#9;" Default="false" Mode="" Description="Container to handle updating SPT in your existing serverfiles." Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
   <Config Name="Auto Update Fika" Target="AUTO_UPDATE_FIKA" Default="false" Mode="" Description="Container to handle updating Fika server mod in your existing serverfiles." Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
   <Config Name="Container takes ownership of server files" Target="TAKE_OWNERSHIP" Default="true" Mode="" Description="If this is set to false, the container will not change file ownership of the server files. Make sure the running user has permissions to access these files." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>

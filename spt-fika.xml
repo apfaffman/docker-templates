@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>spt-fika</Name>
-  <Repository>ghcr.io/zhliau/fika-spt-server-docker:3.11.2</Repository>
+  <Repository>ghcr.io/zhliau/fika-spt-server-docker:3.11.3</Repository>
   <Registry>https://github.com/zhliau?tab=repositories</Registry>
   <Network>bridge</Network>
   <MyIP/>
@@ -11,7 +11,7 @@
   <Project>https://github.com/apfaffman/spt-fika</Project>
   <Overview>SPT AKI server backend with optional Fika mod (can be disabled on first run). Uses zedramus's docker image: https://github.com/zhliau/fika-spt-server-docker.&#xD;
 &#xD;
-Current SPT version: 3.11.2
+Current SPT version: 3.11.3
 &#xD;
 Current Fika server version: v2.4.4
 &#xD;

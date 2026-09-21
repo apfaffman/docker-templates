@@ -1,42 +1,31 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>spt-fika</Name>
-  <Repository>ghcr.io/zhliau/fika-spt-server-docker:3.11.3</Repository>
-  <Registry>https://github.com/zhliau?tab=repositories</Registry>
+  <Repository>ghcr.io/sp-tushonka/server-csharp:4.1.6</Repository>
+  <Registry>https://github.com/SP-Tushonka/server-csharp</Registry>
   <Network>bridge</Network>
   <MyIP/>
-  <Shell>sh</Shell>
+  <Shell>bash</Shell>
   <Privileged>false</Privileged>
   <Support/>
-  <Project>https://github.com/apfaffman/spt-fika</Project>
-  <Overview>SPT AKI server backend with optional Fika mod (can be disabled on first run). Uses zedramus's docker image: https://github.com/zhliau/fika-spt-server-docker.&#xD;
-&#xD;
-Current SPT version: 3.11.3
-&#xD;
-Current Fika server version: v2.4.6
-&#xD;
-This is a barebones template to get your SPT/Fika server running quickly on Unraid.</Overview>
+  <Project>https://github.com/SP-Tushonka/server-csharp</Project>
+  <Overview>SPT server backend. Fika-compatible, but must be installed and configured. This is a barebones template to get your SPT/Fika server running quickly on Unraid.</Overview>
   <Category>GameServers:</Category>
-  <WebUI/>
+  <WebUI>https://[IP]:[PORT:6969]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/apfaffman/docker-templates/master/spt-fika.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/apfaffman/spt-fika/refs/heads/main/pika.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
   <DateInstalled>1735843381</DateInstalled>
-  <DonateText>Please consider donating to the Ukrainian defense effort.</DonateText>
-  <DonateLink>https://www.reddit.com/r/ukraine/wiki/charities/</DonateLink>
+  <DonateText>Please be kind.</DonateText>
+  <DonateLink>https://www.reddit.com/r/RedditForHumanity/comments/1mce5et/information_about_which_charities_actually_reach/</DonateLink>
   <Requires/>
-  <Config Name="Server Files" Target="/opt/server" Default="/mnt/cache/appdata/spt-fika" Mode="rw" Description="Location of required server files, user profiles, server (user/mod) mods, etc." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/spt-fika</Config>
-  <Config Name="Listening Port" Target="6969" Default="6969" Mode="tcp" Description="Leave this alone unless you know what you're doing." Type="Port" Display="always" Required="true" Mask="false">6969</Config>
-  <Config Name="Install Fika Mod" Target="INSTALL_FIKA" Default="true" Mode="" Description="Installs Fika to user/mods folder." Type="Variable" Display="always" Required="true" Mask="false">true</Config>
-  <Config Name="Listen on All Interfaces" Target="LISTEN_ALL_NETWORKS" Default="false" Mode="" Description="Sets http.json 'backendIp' value to 0.0.0.0, telling SPT to listen on all interfaces." Type="Variable" Display="always" Required="false" Mask="false">false</Config>
-  <Config Name="Enable Profile Backup" Target="ENABLE_PROFILE_BACKUP" Default="true" Mode="" Description="Creates a cron job that handles profile backups." Type="Variable" Display="always" Required="false" Mask="false">true</Config>
-  <Config Name="Fika Version" Target="FIKA_VERSION" Default="v2.4.6" Mode="" Description="Override the Fika version string to grab the server release from. The release URL is formatted as https://github.com/project-fika/Fika-Server/releases/download/$FIKA_VERSION/fika-server.zip" Type="Variable" Display="advanced" Required="false" Mask="false">v2.3.6</Config>
-  <Config Name="Auto Update SPT" Target="AUTO_UPDATE_SPT&#9;" Default="false" Mode="" Description="Container to handle updating SPT in your existing serverfiles." Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
-  <Config Name="Auto Update Fika" Target="AUTO_UPDATE_FIKA" Default="false" Mode="" Description="Container to handle updating Fika server mod in your existing serverfiles." Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
-  <Config Name="Container takes ownership of server files" Target="TAKE_OWNERSHIP" Default="true" Mode="" Description="If this is set to false, the container will not change file ownership of the server files. Make sure the running user has permissions to access these files." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
-  <Config Name="Container changes permissions of server files" Target="CHANGE_PERMISSIONS" Default="true" Mode="" Description="If this is set to false, the container will not change file permissions of the server files. Make sure the running user has permissions to access these files." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
-  <Config Name="Install Other Mods" Target="INSTALL_OTHER_MODS&#9;" Default="false" Mode="" Description="Automatically download and install any other mods as specified in MOD_URLS_TO_DOWNLOAD." Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
-  <Config Name="Mod Download URLS" Target="MOD_URLS_TO_DOWNLOAD" Default="false" Mode="" Description="Space-separated list of URLs you want the server to automatically download and install. Requires INSTALL_OTHER_MODS to be 'true.'" Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+  <Config Name="Server User Directory" Target="/opt/spt/user" Default="/mnt/user/appdata/spt/user" Mode="rw" Description="Location of user profiles, server mods (user/mods), and logs." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/spt-fika/user</Config>
+  <Config Name="Web / Client Port" Target="6969" Default="6969" Mode="tcp" Description="Host port for client HTTP traffic (used when running on bridge network)." Type="Port" Display="always" Required="true" Mask="false">6969</Config>
+  <Config Name="Bind IP" Target="SPT_IP" Default="0.0.0.0" Mode="" Description="Internal bind address inside the container." Type="Variable" Display="advanced" Required="true" Mask="false">0.0.0.0</Config>
+  <Config Name="SPT Port" Target="SPT_PORT" Default="6969" Mode="" Description="Internal listening port for the SPT server." Type="Variable" Display="advanced" Required="true" Mask="false">6969</Config>
+  <Config Name="Backend Advertised IP" Target="SPT_BACKEND_IP" Default="" Mode="" Description="Advertised LAN/remote IP address that game clients use to connect to this server." Type="Variable" Display="always" Required="true" Mask="false">192.168.1.69</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="User ID for file permissions (99 is Unraid 'nobody', 1000 for standard Linux user)." Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Group ID for file permissions (100 is Unraid 'users', 1000 for standard Linux group)." Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
 </Container>
